@@ -277,7 +277,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/18/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/18/star-git/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="FunnyZ">
@@ -296,7 +296,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/18/hello-world/" itemprop="url">学会使用 Git 及 Git 常用命令</a></h1>
+                <a class="post-title-link" href="/2017/08/18/star-git/" itemprop="url">学会使用 Git 及 Git 常用命令</a></h1>
         
 
         <div class="post-meta">
@@ -318,6 +318,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Git/" itemprop="url" rel="index">
+                    <span itemprop="name">Git</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -381,28 +403,29 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git remote add origin git:@github.com:FunnyZ/LearnAngular2.git</div></pre></td></tr></table></figure>
 </li>
 <li><p>本地仓库推送到远程仓库</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ git push &lt;远程仓库&gt; &lt;本地分支&gt;:&lt;远程仓库分支&gt;</div><div class="line"></div><div class="line">$ git push -u origin master</div><div class="line">(-u: 不但把master分支内容推送到远程仓库master分支，还会把本地的master分支和远程仓库的master分支关联起来，指定origin为默认主机)</div><div class="line"></div><div class="line">$ git push --all origin</div><div class="line">(将本地所有分支都推送到远程仓库origin)</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ git push &lt;远程仓库&gt; &lt;本地分支&gt;:&lt;远程仓库分支&gt;</div><div class="line"></div><div class="line">$ git push -u origin master</div><div class="line"><span class="comment"># -u: 不但把master分支内容推送到远程仓库master分支，还会把本地的master分支和远程仓库的master分支关联起来，指定origin为默认主机</span></div><div class="line"></div><div class="line">$ git push --all origin</div><div class="line"><span class="comment"># 将本地所有分支都推送到远程仓库origin</span></div></pre></td></tr></table></figure>
 </li>
 <li><p>若是远程仓库上已有本地仓库不一致的文件，则要先拉取该分支内容</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ git pull &lt;远程仓库&gt; &lt;远程分支&gt;:&lt;本地分支&gt;</div><div class="line"></div><div class="line">$ git pull origin next:master</div><div class="line">(抓取origin库的next分支，与本地的master分支合并)</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ git pull &lt;远程仓库&gt; &lt;远程分支&gt;:&lt;本地分支&gt;</div><div class="line"></div><div class="line">$ git pull origin next:master</div><div class="line"><span class="comment"># 抓取origin库的next分支，与本地的master分支合并</span></div></pre></td></tr></table></figure>
 </li>
 <li><p>拉取分支后，合并分支，可能会自动合并，但若存在冲突，便要手动解决</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git merge &lt;分支&gt;</div></pre></td></tr></table></figure>
 </li>
 <li><p>所以呢，最好先查看下有什么不同</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ git diff &lt;source_branch&gt; &lt;target_branch&gt;</div><div class="line"></div><div class="line">$ git diff file</div><div class="line"></div><div class="line">$ git diff HEAD --file</div><div class="line">(与仓库中最新版本的区别)</div><div class="line"></div><div class="line">$ git diff fe55d6a 112k32 &gt; diff.txt</div><div class="line">(查看两个历史版本的不同，写入diff.txt)</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ git diff &lt;source_branch&gt; &lt;target_branch&gt;</div><div class="line"></div><div class="line">$ git diff file</div><div class="line"></div><div class="line">$ git diff HEAD --file</div><div class="line"><span class="comment"># 与仓库中最新版本的区别</span></div><div class="line"></div><div class="line">$ git diff fe55d6a 112k32 &gt; diff.txt</div><div class="line"><span class="comment"># 查看两个历史版本的不同，写入diff.txt</span></div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="多人合作，最好不要在同一分支上同时操作"><a href="#多人合作，最好不要在同一分支上同时操作" class="headerlink" title="多人合作，最好不要在同一分支上同时操作"></a>多人合作，最好不要在同一分支上同时操作</h3><ul>
-<li>分支操作<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">$ git branch dev</div><div class="line">(创建dev分支)</div><div class="line"></div><div class="line">$ git checkout dev</div><div class="line">(切换到dev分支)</div><div class="line"></div><div class="line">$ git checkout -b dev</div><div class="line">(创建dev分支，并切换到dev分支)</div><div class="line"></div><div class="line">$ git branch</div><div class="line">(查看当前是哪个分支)</div><div class="line"></div><div class="line">$ git branch -a</div><div class="line">(查看所有分支，包括远程)</div><div class="line"></div><div class="line">$ git branch -r</div><div class="line">(查看远程仓库的分支)</div><div class="line"></div><div class="line">$ git branch -d dev</div><div class="line">(删除dev分支)</div><div class="line"></div><div class="line">$ git branch -D dev</div><div class="line">(强制删除dev分支)</div><div class="line"></div><div class="line">$ git merge dev</div><div class="line">(把dev分支合并到当前分支上)</div><div class="line"></div><div class="line">$ git merge --no-ff -m <span class="string">'merge with no-ff'</span> dev</div><div class="line">(标记禁用Fast forward，合并后的历史有分支，能看出曾做过分支合并)</div></pre></td></tr></table></figure>
+<li>分支操作<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">$ git branch dev</div><div class="line"><span class="comment"># 创建dev分支</span></div><div class="line"></div><div class="line">$ git checkout dev</div><div class="line"><span class="comment"># 切换到dev分支</span></div><div class="line"></div><div class="line">$ git checkout -b dev</div><div class="line"><span class="comment"># 创建dev分支，并切换到dev分支</span></div><div class="line"></div><div class="line">$ git branch</div><div class="line"><span class="comment"># 查看当前是哪个分支</span></div><div class="line"></div><div class="line">$ git branch -a</div><div class="line"><span class="comment"># 查看所有分支，包括远程</span></div><div class="line"></div><div class="line">$ git branch -r</div><div class="line"><span class="comment"># 查看远程仓库的分支</span></div><div class="line"></div><div class="line">$ git branch -d dev</div><div class="line"><span class="comment"># 删除dev分支</span></div><div class="line"></div><div class="line">$ git branch -D dev</div><div class="line"><span class="comment"># 强制删除dev分支</span></div><div class="line"></div><div class="line">$ git merge dev</div><div class="line"><span class="comment"># 把dev分支合并到当前分支上</span></div><div class="line"></div><div class="line">$ git merge --no-ff -m <span class="string">'merge with no-ff'</span> dev</div><div class="line"><span class="comment"># 标记禁用Fast forward，合并后的历史有分支，能看出曾做过分支合并</span></div></pre></td></tr></table></figure>
 </li>
 </ul>
+<h3 id="推荐打标签"><a href="#推荐打标签" class="headerlink" title="推荐打标签"></a>推荐打标签</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ git tag</div><div class="line"><span class="comment"># 列出本地所有标签</span></div><div class="line"></div><div class="line">$ git tag &lt;tagname&gt;</div><div class="line"><span class="comment"># 基于最新的提交记录创建标签</span></div><div class="line"></div><div class="line">$ git tag -d &lt;tagname&gt;</div><div class="line"><span class="comment"># 删除标签</span></div></pre></td></tr></table></figure>
 <h3 id="More-命令"><a href="#More-命令" class="headerlink" title="More 命令"></a>More 命令</h3><ul>
 <li><p>历史纪录</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">log</span></div><div class="line"></div><div class="line">$ git <span class="built_in">log</span> --author=funnyZ</div><div class="line">(查看funnyZ的提交记录)</div><div class="line"></div><div class="line">$ git <span class="built_in">log</span> --graph</div><div class="line">(分支合并图)</div><div class="line"></div><div class="line">$ git <span class="built_in">log</span> --pretty=oneline</div><div class="line">(每条记录均以一行显示)</div><div class="line"></div><div class="line">$ git <span class="built_in">log</span> --graph --pretty=oneline --abbrev-commit</div><div class="line">(合并上面两条的效果，并简化标记id号)</div><div class="line"></div><div class="line">$ git reflog</div><div class="line">(查看已执行的命令历史)</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">log</span></div><div class="line"></div><div class="line">$ git <span class="built_in">log</span> --author=funnyZ</div><div class="line"><span class="comment"># 查看funnyZ的提交记录</span></div><div class="line"></div><div class="line">$ git <span class="built_in">log</span> --graph</div><div class="line"><span class="comment"># 分支合并图</span></div><div class="line"></div><div class="line">$ git <span class="built_in">log</span> --pretty=oneline</div><div class="line"><span class="comment"># 每条记录均以一行显示</span></div><div class="line"></div><div class="line">$ git <span class="built_in">log</span> --graph --pretty=oneline --abbrev-commit</div><div class="line"><span class="comment"># 合并上面两条的效果，并简化标记id号</span></div><div class="line"></div><div class="line">$ git reflog</div><div class="line"><span class="comment"># 查看已执行的命令历史</span></div></pre></td></tr></table></figure>
 </li>
 <li><p>回退操作</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ git reset --hard HEAD^</div><div class="line">(会退到上一版本，HEAD为当前版本，HEAD^为上版本，HEAD^^为上上版本)</div><div class="line"></div><div class="line">$ git reset --hard fe55d6a</div><div class="line">(回退到指定标记id（fe55d6a）的版本)</div><div class="line"></div><div class="line">$ git reset HEAD filename</div><div class="line">(把暂存区的修改撤销掉（unstage），重新放回工作区)</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ git reset --hard HEAD^</div><div class="line"><span class="comment"># 回退到上一版本，HEAD为当前版本，HEAD^为上版本，HEAD^^为上上版本</span></div><div class="line"></div><div class="line">$ git reset --hard fe55d6a</div><div class="line"><span class="comment"># 回退到指定标记id（fe55d6a）的版本</span></div><div class="line"></div><div class="line">$ git reset HEAD filename</div><div class="line"><span class="comment"># 把暂存区的修改撤销掉（unstage），重新放回工作区</span></div></pre></td></tr></table></figure>
 </li>
 <li><p>查看远程仓库信息</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git remote</div><div class="line"></div><div class="line">$ git remote -v</div></pre></td></tr></table></figure>
@@ -517,7 +540,25 @@
           
 
           
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
