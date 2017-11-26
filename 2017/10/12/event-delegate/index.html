@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="#">
+<meta name="description" content="事件委托什么是事件委托？ 书上写：事件委托利用了事件冒泡，只指定一个事件处理程序，就可以管理某一类型的所有事件。  通俗地理解就是，将一个或一组元素的事件委托到它的父层或者更上层元素，通过事件冒泡机制从而触发到绑定事件监听的父层或更上层元素，然后触发执行函数。可以理解为集中所有的事件到一个中心（顶层元素吧），然后由这个">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="探索事件委托">
 <meta property="og:url" content="http://yoursite.com/2017/10/12/event-delegate/index.html">
 <meta property="og:site_name" content="FunnyZ-Blog">
-<meta property="og:description" content="#">
+<meta property="og:description" content="事件委托什么是事件委托？ 书上写：事件委托利用了事件冒泡，只指定一个事件处理程序，就可以管理某一类型的所有事件。  通俗地理解就是，将一个或一组元素的事件委托到它的父层或者更上层元素，通过事件冒泡机制从而触发到绑定事件监听的父层或更上层元素，然后触发执行函数。可以理解为集中所有的事件到一个中心（顶层元素吧），然后由这个中心对事件进行分发执行。 事件委托的优点 事件委托提高了性能，因为它只在一个 D">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-12T04:15:24.484Z">
+<meta property="og:updated_time" content="2017-11-26T16:39:26.004Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="探索事件委托">
-<meta name="twitter:description" content="#">
+<meta name="twitter:description" content="事件委托什么是事件委托？ 书上写：事件委托利用了事件冒泡，只指定一个事件处理程序，就可以管理某一类型的所有事件。  通俗地理解就是，将一个或一组元素的事件委托到它的父层或者更上层元素，通过事件冒泡机制从而触发到绑定事件监听的父层或更上层元素，然后触发执行函数。可以理解为集中所有的事件到一个中心（顶层元素吧），然后由这个中心对事件进行分发执行。 事件委托的优点 事件委托提高了性能，因为它只在一个 D">
 
 
 
@@ -366,7 +366,15 @@
       
 
       
-        <p># </p>
+        <h1 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h1><h2 id="什么是事件委托？"><a href="#什么是事件委托？" class="headerlink" title="什么是事件委托？"></a>什么是事件委托？</h2><blockquote>
+<p>书上写：事件委托利用了事件冒泡，只指定一个事件处理程序，就可以管理某一类型的所有事件。</p>
+</blockquote>
+<p>通俗地理解就是，将一个或一组元素的事件委托到它的父层或者更上层元素，通过事件冒泡机制从而触发到绑定事件监听的父层或更上层元素，然后触发执行函数。可以理解为集中所有的事件到一个中心（顶层元素吧），然后由这个中心对事件进行分发执行。</p>
+<h2 id="事件委托的优点"><a href="#事件委托的优点" class="headerlink" title="事件委托的优点"></a>事件委托的优点</h2><ul>
+<li>事件委托提高了性能，因为它只在一个 DOM 对象上添加事件监听，减少了要在多个 DOM 对象上进行事件绑定监听所需的对象内存；</li>
+<li>事先指定所有事件处理程序而导致的 DOM 访问次数，会延迟整个页面的交互就绪时间。</li>
+</ul>
+<h2 id="简单的事件委托"><a href="#简单的事件委托" class="headerlink" title="简单的事件委托"></a>简单的事件委托</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dom = <span class="built_in">document</span>.getElementById(<span class="string">'container'</span>);</span><br><span class="line">dom.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> event = event || <span class="built_in">window</span>.event,</span><br><span class="line">		target = event.target || event.srcElement;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 根据触发的对象不同进行不同的委托，switch / if</span></span><br><span class="line">	<span class="keyword">if</span> ( target.nodeName === <span class="string">'LI ) &#123;</span></span><br><span class="line"><span class="string">		// doing something</span></span><br><span class="line"><span class="string">	&#125;</span></span><br><span class="line"><span class="string">&#125;);</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -459,8 +467,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -557,6 +574,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#事件委托"><span class="nav-number">1.</span> <span class="nav-text">事件委托</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是事件委托？"><span class="nav-number">1.1.</span> <span class="nav-text">什么是事件委托？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件委托的优点"><span class="nav-number">1.2.</span> <span class="nav-text">事件委托的优点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简单的事件委托"><span class="nav-number">1.3.</span> <span class="nav-text">简单的事件委托</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
