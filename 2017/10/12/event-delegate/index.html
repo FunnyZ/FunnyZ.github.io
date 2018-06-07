@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="FunnyZ-Blog">
 <meta property="og:description" content="事件委托什么是事件委托？ 书上写：事件委托利用了事件冒泡，只指定一个事件处理程序，就可以管理某一类型的所有事件。  通俗地理解就是，将一个或一组元素的事件委托到它的父层或者更上层元素，通过事件冒泡机制从而触发到绑定事件监听的父层或更上层元素，然后触发执行函数。可以理解为集中所有的事件到一个中心（顶层元素吧），然后由这个中心对事件进行分发执行。 事件委托的优点 事件委托提高了性能，因为它只在一个 D">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-26T16:39:26.004Z">
+<meta property="og:updated_time" content="2017-12-02T12:41:58.166Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="探索事件委托">
 <meta name="twitter:description" content="事件委托什么是事件委托？ 书上写：事件委托利用了事件冒泡，只指定一个事件处理程序，就可以管理某一类型的所有事件。  通俗地理解就是，将一个或一组元素的事件委托到它的父层或者更上层元素，通过事件冒泡机制从而触发到绑定事件监听的父层或更上层元素，然后触发执行函数。可以理解为集中所有的事件到一个中心（顶层元素吧），然后由这个中心对事件进行分发执行。 事件委托的优点 事件委托提高了性能，因为它只在一个 D">
@@ -375,6 +375,9 @@
 <li>事先指定所有事件处理程序而导致的 DOM 访问次数，会延迟整个页面的交互就绪时间。</li>
 </ul>
 <h2 id="简单的事件委托"><a href="#简单的事件委托" class="headerlink" title="简单的事件委托"></a>简单的事件委托</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dom = <span class="built_in">document</span>.getElementById(<span class="string">'container'</span>);</span><br><span class="line">dom.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> event = event || <span class="built_in">window</span>.event,</span><br><span class="line">		target = event.target || event.srcElement;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 根据触发的对象不同进行不同的委托，switch / if</span></span><br><span class="line">	<span class="keyword">if</span> ( target.nodeName === <span class="string">'LI ) &#123;</span></span><br><span class="line"><span class="string">		// doing something</span></span><br><span class="line"><span class="string">	&#125;</span></span><br><span class="line"><span class="string">&#125;);</span></span><br></pre></td></tr></table></figure>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><a href=""></a></li>
+</ul>
 
       
     </div>
@@ -496,7 +499,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -588,7 +591,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#事件委托"><span class="nav-number">1.</span> <span class="nav-text">事件委托</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是事件委托？"><span class="nav-number">1.1.</span> <span class="nav-text">什么是事件委托？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件委托的优点"><span class="nav-number">1.2.</span> <span class="nav-text">事件委托的优点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简单的事件委托"><span class="nav-number">1.3.</span> <span class="nav-text">简单的事件委托</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#事件委托"><span class="nav-number">1.</span> <span class="nav-text">事件委托</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是事件委托？"><span class="nav-number">1.1.</span> <span class="nav-text">什么是事件委托？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件委托的优点"><span class="nav-number">1.2.</span> <span class="nav-text">事件委托的优点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简单的事件委托"><span class="nav-number">1.3.</span> <span class="nav-text">简单的事件委托</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">1.4.</span> <span class="nav-text">参考资料</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -611,7 +614,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
